@@ -14,7 +14,7 @@ Das Projekt beinhaltet viele Möglichkeiten. Eine Übersicht von relevanten Info
 *Wie die Codes aufgebaut sind und welche Funktionen verwendet werden, sind als Kommentare in main.py und html file erfasst.*
 
 ## Ablauf des Programms
-![img_1.png](img_1.png)
+![Diagramm](./images/ablaufdiagramm.png)
 
 ## Workflow
 Folgende Module werden importiert, damit die Web-Applikation korrekt funktioniert:
