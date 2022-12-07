@@ -1,16 +1,14 @@
-# This is a sample Python script.
+from flask import Flask
+from flask import render_template
 
-# Press Umschalt+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
-
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Strg+F8 to toggle the breakpoint.
+app = Flask("Verwaltung der Feriendestinationen")
 
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
+@app.route('/hello')
+def hello_world():
+    return render_template('index.html', name="Debora")
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+if __name__ == "__main__":
+    app.run(debug=True, port=5000)
+
+app=Flask(__name__,template_folder='templates')
