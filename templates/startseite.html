@@ -1,0 +1,35 @@
+{% extends "vorlage.html" %}
+
+{% block body %}
+<body>
+  <!-- Header zur Übersicht der Navigation -->
+    <div class="container">
+    <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+      <a href="/" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
+        <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"></use></svg>
+      </a>
+
+      <div class="col-md-4 text-end">
+        <a href="#" type="button" class="btn btn-light">Home</a>
+        <a href="#" type="button" class="btn btn-light">Auswahl</a>
+        <a href="#" type="button" class="btn btn-light">Neue Eingabe</a>
+        <a href="#" type="button" class="btn btn-light">Übersicht</a>
+      </div>
+    </header>
+  </div>
+
+   <!-- Text -->
+<br><br><br><br>
+<h1 class="text-center"> Herzlich Willkommen zu der Verwaltung von deinen Feriendestinationen</h1>
+<br>
+<h3 class="text-center"> Es gibt viele schöne Feriendestinationen in Europa. <br> Doch welche sind für Camper/innen geeignet?</h3>
+<br><br>
+<p class="text-center"> Schau doch mal selbst rein:</p>
+
+   <!-- Button zur Auswahl und neuer Eingabe -->
+  <ul class="nav col-12 col-md-auto mb-6 justify-content-center mb-md-0">
+        <li><a href="#" type="button" class="btn btn-outline-secondary">Auswahl</a></li>
+        <li><a href="#" type="button" class="btn btn-outline-secondary">Neue Eingabe</a></li>
+   </ul>
+</body>
+{% endblock %}
