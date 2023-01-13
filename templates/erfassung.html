@@ -1,0 +1,49 @@
+{% include "vorlage.html" %}
+
+{% block content %}
+
+<!-- Inhalt -->
+<!-- Alle Darstellungs-Codes sind aus Bootstrap (teilweise angepasst) -->
+
+<h1 class="lead mb-4 text-center">Erfasse deinen Lieblings-Spot <br></h1>
+
+<div class="container center">
+<form action="/erfassung" method="POST">
+   <!-- Ortschaft erfassen -->
+  <div class="form-group">
+    <input type="text" name="input_ortschaft" class="form-control" placeholder="Ortschaft">
+  </div>
+
+<br>
+   <!-- Region erfassen -->
+  <div class="form-group">
+    <input type="text" name="input_region" class="form-control" placeholder="Region">
+  </div>
+
+<br>
+
+  <!-- Land in Europa erfassen -->
+    <div class="form-group">
+    <input type="text" name="input_land" class="form-control" placeholder="Land in Europa">
+  </div>
+
+<br>
+
+  <!-- Aktivität erfassen -->
+    <div class="form-group">
+    <input type="text" name="input_activities" class="form-control" id="formGroupExampleInput" placeholder="Was kann man dort genau machen?">
+  </div>
+
+<br>
+    <button type="submit" class="btn btn-outline-secondary">Destination speichern</button>
+</form>
+
+<br>
+
+{{ success }}
+
+</div>
+
+<!-- Inhalt beenden -->
+
+{% endblock %}
