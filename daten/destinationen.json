@@ -1,0 +1,32 @@
+[
+    {
+        "ortschaft": "Portoferraio",
+        "region": "Insel Elba",
+        "land": "Italien",
+        "activities": "kleines Fischerdorf besichtigen"
+    },
+    {
+        "ortschaft": "Split",
+        "region": "Dalmatien",
+        "land": "Kroatien",
+        "activities": "Stadtbesichtigung - eher teuer"
+    },
+    {
+        "ortschaft": "Tarifa",
+        "region": "Andalusien",
+        "land": "Spanien",
+        "activities": "Guter Surfer-Spot"
+    },
+    {
+        "ortschaft": "Valencia",
+        "region": "Valencia",
+        "land": "Spanien",
+        "activities": "Relaxen mit Campings direkt am Meer"
+    },
+    {
+        "ortschaft": "Rovinj",
+        "region": "Istrien",
+        "land": "Kroatien",
+        "activities": "Badeferien mit der ganzen Familie"
+    }
+]
