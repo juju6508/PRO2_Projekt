@@ -1,14 +1,43 @@
+<!-- Die "vorlage.html" wird als Template bei jedem html-File verwendet. -->
+
 <!DOCTYPE html>
 <html lang="en">
-  {% block head %}
+
 <head>
+  {% block head %}
+<!-- Link zum Bootstrap-File sowie Link zum CSS-File -->
     <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">
+
+<!-- Die benötigten meta tags -->
     <meta charset="utf-8"/>
-    <title>Where to next?</title>
+    <meta name="viewport" content="width=device-with, initial-scale=1, shrink-to-fit=no">
+
+<!-- Mit app_name kann individuell auf jeder Seite einen Namen gesetzt werden, welcher im Tab des Browsers erscheint -->
+    <title>{{ app_name }}</title>
   {% endblock %}
 </head>
 
+ <!-- Header zur Übersicht der Navigation -->
+    <div class="container">
+    <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+   {% block header %}
+
+        <a href="/" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">Ferien mit dem Camper - Wohin?
+        <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"></use></svg>
+      </a>
+
+      <div class="col-md-4 text-end">
+        <a href="/auswahl" type="button" class="btn btn-outline-secondary">Auswahl</a>
+        <a href="/erfassung" type="button" class="btn btn-outline-secondary">Neue Eingabe</a>
+        <a href="uebersicht" type="button" class="btn btn-outline-secondary">Übersicht</a>
+      </div>
+   {% endblock %}
+    </header>
+  </div>
+
 <body>
-	{% block body %}{% endblock %}
+   {% block body %}
+   {% endblock %}
 </body>
 </html>
