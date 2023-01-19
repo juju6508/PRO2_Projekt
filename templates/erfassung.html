@@ -1,49 +1,108 @@
+<!-- Mittels Jinja Logik wird die vorlage.html als Template eingefügt. -->
 {% include "vorlage.html" %}
 
-{% block content %}
+<!-- Quelle der Darstellungen: Offizielle Website von Bootstrap (teilweise angepasst) -->
 
 <!-- Inhalt -->
-<!-- Alle Darstellungs-Codes sind aus Bootstrap (teilweise angepasst) -->
+<body>
+{% block content %}
 
-<h1 class="lead mb-4 text-center">Erfasse deinen Lieblings-Spot <br></h1>
+<h1 class="lead text-center">Erfasse deinen Lieblings-Spot</h1>
+<p class="mb-4 text-center">Fehlt eine Destination, dann kannst du dies hier eingeben:<br></p>
 
+<br>
+
+<!-- Alle benötigten Daten werden aufgelistet, um eine neue Destination zu erfassen. -->
 <div class="container center">
 <form action="/erfassung" method="POST">
-   <!-- Ortschaft erfassen -->
+  <!-- Ortschaft erfassen -->
   <div class="form-group">
-    <input type="text" name="input_ortschaft" class="form-control" placeholder="Ortschaft">
+    <input type="text" name="input_ortschaft" class="form-control" placeholder="Ortschaft" required>
   </div>
 
 <br>
-   <!-- Region erfassen -->
+
+  <!-- Region erfassen -->
   <div class="form-group">
     <input type="text" name="input_region" class="form-control" placeholder="Region">
   </div>
 
 <br>
 
-  <!-- Land in Europa erfassen -->
-    <div class="form-group">
-    <input type="text" name="input_land" class="form-control" placeholder="Land in Europa">
+  <!-- Land in Europa auswählen, welche bereits vorgegeben sind. -->
+  <div class="form-group">
+      <select class = "form-select" name="input_land" required>
+              <option selected>Land in Europa</option>
+              <option value="Albanien">Albanien</option>
+              <option value="Andorra">Andorra</option>
+              <option value="Belgien">Belgien</option>
+              <option value="Bosnien und Herzegowina">Bosnien und Herzegowina</option>
+              <option value="Bulgarien">Bulgarien</option>
+              <option value="Dänemark">Dänemark</option>
+              <option value="Deutschland">Deutschland</option>
+              <option value="Estland">Estland</option>
+              <option value="Finnland">Finnland</option>
+              <option value="Frankreich">Frankreich</option>
+              <option value="Griechenland">Griechenland</option>
+              <option value="Irland">Irland</option>
+              <option value="Island">Island</option>
+              <option value="Italien">Italien</option>
+              <option value="Kasachstan">Kasachstan</option>
+              <option value="Kosovo">Kosovo</option>
+              <option value="Kroatien">Kroatien</option>
+              <option value="Lettland">Lettland</option>
+              <option value="Liechtenstein">Liechtenstein</option>
+              <option value="Litauen">Litauen</option>
+              <option value="Luxemburg">Luxemburg</option>
+              <option value="Malta">Malta</option>
+              <option value="Niederlande">Niederlande</option>
+              <option value="Norwegen">Norwegen</option>
+              <option value="Österreich">Österreich</option>
+              <option value="Polen">Polen</option>
+              <option value="Portugal">Portugal</option>
+              <option value="Rumänien">Rumänien</option>
+              <option value="Schweden">Schweden</option>
+              <option value="Schweiz">Schweiz</option>
+              <option value="Serbien">Serbien</option>
+              <option value="Slowakei">Slowakei</option>
+              <option value="Spanien">Spanien</option>
+              <option value="Tschechien">Tschechien</option>
+              <option value="Türkei">Türkei</option>
+              <option value="Ukraine">Ukraine</option>
+              <option value="Ungarn">Ungarn</option>
+              <option value="Zypern ">Zypern </option>
+      </select>
   </div>
 
 <br>
 
   <!-- Aktivität erfassen -->
-    <div class="form-group">
-    <input type="text" name="input_activities" class="form-control" id="formGroupExampleInput" placeholder="Was kann man dort genau machen?">
+  <div class="form-group">
+    <input type="text" name="input_activities" class="form-control" placeholder="Was kann man dort genau machen?" required>
   </div>
 
 <br>
-    <button type="submit" class="btn btn-outline-secondary">Destination speichern</button>
+
+  <!-- Button, welcher die Destination speichert -->
+  <ul class="text-center">
+  <button type="submit" class="btn btn-outline-secondary">Destination speichern</button>
 </form>
 
-<br>
+<br> <br>
 
+<!-- Success, um die gespeicherten Daten direkt anzuzeigen (siehe f-string in der Datei main.py). -->
 {{ success }}
+
+<br> <br> <br> <br>
+
+<!-- Einfachheitshalber kann direkt hier unten weitergeklickt werden, ohne zur Navigationsleiste zu gehen. -->
+        <h1 class="lead mb-4 text-center">Auf direktem Weg weiter:</h1>
+        <a href="/auswahl" type="button" class="btn btn-outline-secondary">Auswahl</a>
+        <a href="/uebersicht" type="button" class="btn btn-outline-secondary">Übersicht</a>
+</ul>
 
 </div>
 
 <!-- Inhalt beenden -->
-
 {% endblock %}
+</body>
