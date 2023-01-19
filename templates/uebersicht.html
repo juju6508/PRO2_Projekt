@@ -1,0 +1,60 @@
+<!-- Mittels Jinja Logik wird die vorlage.html als Template eingefügt. -->
+{% include "vorlage.html" %}
+
+<!-- Quelle der Darstellungen: Offizielle Website von Bootstrap (teilweise angepasst) -->
+
+<!-- Inhalt -->
+<body>
+{% block content %}
+
+<h1 class="lead text-center">Übersicht</h1>
+<p class="text-center">Für eine visuelle Darstellung deiner besuchten Destinationen</p>
+
+<br>
+
+<div class="container center"</div>
+<p class=>Starte das Diagramm, indem du die gewünschten Daten auswählst.</p>
+
+<!-- Optionen für die Auswahl der x-Achse und y-Achse, um das Diagramm zu starten. -->
+<div class="row">
+    <form method="POST">
+        <select class="form-select" name="x-Achse">
+            <option value="" selected>Daten x-Achse</option>
+            <option value="count">Anzahl Länder</option>
+        </select>
+
+<br>
+
+        <select class="form-select" name="y-Achse">
+            <option value="" selected>Daten y-Achse</option>
+            <option value="land">Länder</option>
+            <option value="activities">Aktivitäten</option>
+        </select>
+
+</br>
+
+        <!-- Ein Button, damit die Daten angezeigt werden und einer für die erneute Auswertung der Daten -->
+        <button type="submit" class="btn btn-outline-secondary">Daten anzeigen</button>
+        <a href="/uebersicht" type="button" class="btn btn-outline-secondary">Erneute Auswertung</a>
+</div>
+    </form>
+
+<br>
+
+        <!-- Platzierung der Visualisierung/Diagramm -->
+        {{ grafik |safe }}
+
+</div>
+
+<br> <br>
+
+<!-- Einfachheitshalber kann direkt hier unten weitergeklickt werden, ohne zur Navigationsleiste zu gehen. -->
+<ul class="text-center">
+<h1 class="lead text-center">Möchtest du nochmals eine andere Destination speichern?</h1>
+<p class="mb-4 text-center">Geh mit diesem Button direkt zur Eingabe Seite:<br></p>
+<a href="/erfassung" type="button" class="btn btn-outline-secondary">Neue Eingabe</a>
+</ul>
+
+<!-- Inhalt beenden -->
+{% endblock %}
+</body>
