@@ -1,35 +1,29 @@
-{% extends "vorlage.html" %}
+<!-- Mittels Jinja Logik wird die vorlage.html als Template eingefügt. -->
+{% include "vorlage.html" %}
 
-{% block body %}
+<!-- Quelle der Darstellungen: Offizielle Website von Bootstrap (teilweise angepasst) -->
+
+<!-- Inhalt -->
 <body>
-  <!-- Header zur Übersicht der Navigation -->
-    <div class="container">
-    <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
-      <a href="/" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
-        <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"></use></svg>
-      </a>
+{% block body %}
 
-      <div class="col-md-4 text-end">
-        <a href="#" type="button" class="btn btn-light">Home</a>
-        <a href="#" type="button" class="btn btn-light">Auswahl</a>
-        <a href="#" type="button" class="btn btn-light">Neue Eingabe</a>
-        <a href="#" type="button" class="btn btn-light">Übersicht</a>
-      </div>
-    </header>
-  </div>
+<br><br><br><br>  <!-- Zeilenumbrüche, damit der nachfolgende Text in der Mitte steht -->
 
-   <!-- Text -->
-<br><br><br><br>
-<h1 class="text-center"> Herzlich Willkommen zu der Verwaltung von deinen Feriendestinationen</h1>
-<br>
-<h3 class="text-center"> Es gibt viele schöne Feriendestinationen in Europa. <br> Doch welche sind für Camper/innen geeignet?</h3>
-<br><br>
-<p class="text-center"> Schau doch mal selbst rein:</p>
+<h1 class="text-center"> Verwalte deine Feriendestinationen</h1>
+<p class="text-center shadow p-4 mb-4 rounded"> Es gibt viele schöne Feriendestinationen in Europa. Doch welche sind für Camper*innen geeignet? <br> Verschaffe dir mit diesem Tool einen Überblick über deine besuchten Destinationen mit dem Camper <br> und erfasse neue Wunsch-Spots für weitere Inspirationen. </p><br>
 
-   <!-- Button zur Auswahl und neuer Eingabe -->
-  <ul class="nav col-12 col-md-auto mb-6 justify-content-center mb-md-0">
-        <li><a href="#" type="button" class="btn btn-outline-secondary">Auswahl</a></li>
-        <li><a href="#" type="button" class="btn btn-outline-secondary">Neue Eingabe</a></li>
-   </ul>
-</body>
+<p class="lead text-center"> Schau doch mal selbst rein:</p> <br>
+
+   <!-- Button zur "Auswahl-Seite", "Neue Eingabe-Seite" und "Übersicht-Seite"
+            Mit <div class="w-100"</div> = Nach Grössen zu ordnen (Sizing) werden diese übereinander dargestellt -->
+<ul class="text-center">
+        <a href="/auswahl" type="button" class="btn btn-outline-secondary">Auswahl</a>
+       <div class="w-100"</div> <br>
+        <a href="/erfassung" type="button" class="btn btn-outline-secondary">Neue Eingabe</a>
+       <div class="w-100"</div> <br>
+        <a href="/uebersicht" type="button" class="btn btn-outline-secondary">Übersicht</a>
+</ul>
+
+<!-- Inhalt beenden -->
 {% endblock %}
+</body>
