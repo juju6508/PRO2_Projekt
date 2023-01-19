@@ -1,24 +1,12 @@
 [
     {
-        "ortschaft": "Portoferraio",
-        "region": "Insel Elba",
-        "land": "Italien",
-        "activities": "kleines Fischerdorf besichtigen"
-    },
-    {
-        "ortschaft": "Split",
-        "region": "Dalmatien",
-        "land": "Kroatien",
-        "activities": "Stadtbesichtigung - eher teuer"
-    },
-    {
         "ortschaft": "Tarifa",
         "region": "Andalusien",
         "land": "Spanien",
         "activities": "Guter Surfer-Spot"
     },
     {
-        "ortschaft": "Valencia",
+        "ortschaft": "Alicante",
         "region": "Valencia",
         "land": "Spanien",
         "activities": "Relaxen mit Campings direkt am Meer"
@@ -28,5 +16,41 @@
         "region": "Istrien",
         "land": "Kroatien",
         "activities": "Badeferien mit der ganzen Familie"
+    },
+    {
+        "ortschaft": "Portoferraio",
+        "region": "Insel Elba",
+        "land": "Italien",
+        "activities": "Einzigartiges Fischerdorf besichtigen"
+    },
+    {
+        "ortschaft": "Vrsi",
+        "region": "Zadar",
+        "land": "Kroatien",
+        "activities": "Badeferien mit der ganzen Familie"
+    },
+    {
+        "ortschaft": "Beach Beauduc in Arles",
+        "region": "Cote d'Azur",
+        "land": "Frankreich",
+        "activities": "Guter Surfer-Spot"
+    },
+    {
+        "ortschaft": "Ebro-Delta",
+        "region": "Katalonien",
+        "land": "Spanien",
+        "activities": "Einer der sch\u00f6nsten Naturp\u00e4rke"
+    },
+    {
+        "ortschaft": "Lacona",
+        "region": "Insel Elba",
+        "land": "Italien",
+        "activities": "Badeferien direkt am Meer"
+    },
+    {
+        "ortschaft": "Zuoz",
+        "region": "Kt. Graub\u00fcnden",
+        "land": "Schweiz",
+        "activities": "Stadtbesichtigung"
     }
 ]
