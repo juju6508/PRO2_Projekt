@@ -1,0 +1,72 @@
+<!-- Mittels Jinja Logik wird die vorlage.html als Template eingefügt. -->
+{% include "vorlage.html" %}
+
+<!-- Quelle der Darstellungen: Offizielle Website von Bootstrap (teilweise angepasst) -->
+
+<!-- Inhalt -->
+<body>
+{% block content %}
+
+<h1 class="lead text-center">Sortiere nach deinen Lieblings-Spots</h1>
+<p class="mb-4 text-center">Damit du weisst: "where to next"<br></p>
+
+<!-- Die beiden Auswahl-Formen von Bootstrap mit Filter-Funktion" -->
+<div class="container center">
+        <form method="POST">
+                    <!-- Das Land auswählen, damit nur dieses erscheint. -->
+                    <select class="form-select" name="land">
+                        <option value="" selected>Land auswählen</option>
+                        {%for land in laender%}
+                        <option value="{{ land }}">{{ land }}</option>
+                        {% endfor %}
+                    </select>
+
+<br>
+                    <!-- Die Aktivitäten einschränken -->
+                    <select class="form-select" name="activities">
+                        <option value="" selected>Aktivitäten einschränken</option>
+                        {%for activities in activities %}
+                        <option value="{{ activities }}">{{ activities }}</option>
+                        {% endfor %}
+                    </select>
+<br>
+
+                    <!-- Ein Button für die Anwendung des Filters und einer für die Darstellung aller Destinationen -->
+                    <button type="submit" class="btn btn-outline-secondary">Filter anwenden</button>
+                    <a href="/auswahl" type="button" class="btn btn-outline-secondary">Zurück zu allen Destinationen</a>
+</div>
+
+<br>
+
+<h1 class="lead mb-4 text-center">Alle besuchten Destinationen<br></h1>
+
+<!-- Alle erfassten Destinationen sind hier aufgelistet. Daten werden direkt aus destinationen.json herausgenommen. -->
+<div class="container center"</div>
+<div class="row">
+{% for anzeige in anzeigen %}
+    <div class="border border-dark p-2" style="max-width: 20rem;">
+        <div class="header shadow p-2 mb-2 rounded text-center">Destination</div>
+        <div class="text-dark, header shadow p-2 mb-2 rounded text-center">
+            <p class="text">Ortschaft: {{ anzeige.ortschaft }}</p>
+            <p class="text">Region: {{ anzeige.region }}</p>
+            <p class="text">Land: {{ anzeige.land }}</p>
+            <p class="text">Aktivität: {{ anzeige.activities }}</p>
+</div>
+    </div>
+{% endfor %}
+
+</form>
+        </div>
+
+<br> <br>
+
+<!-- Einfachheitshalber kann direkt hier unten weitergeklickt werden, ohne zur Navigationsleiste zu gehen. -->
+<ul class="text-center">
+<h1 class="lead mb-4 text-center">Fehlt doch noch eine Destination?</h1>
+<p class="mb-4 text-center">Dann kannst du dies einfach auf der nächsten Seite erfassen:<br></p>
+<a href="/erfassung" type="button" class="btn btn-outline-secondary">Neue Eingabe</a>
+</ul>
+
+<!-- Inhalt beenden -->
+{% endblock %}
+</body>
