@@ -1,0 +1,9 @@
+/* Änderung der Hintergrundfarbe für die gesamte Website */
+body   {
+	background-color: #ECF4FF
+}
+
+/* Änderung der Schriftfarbe für die Grösse h1 der gesamten Website */
+h1 {
+    color: #23819C;
+}
